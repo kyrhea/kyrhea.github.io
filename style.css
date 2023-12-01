@@ -117,14 +117,14 @@ span {
 }
 
 .home-content h1 {
-    font-size: 5.6rem;
+    font-size: 7.6rem;
     font-weight: 700;
     line-height: 1.3;
     align-self: center;
 }
 
 .home-content p {
-    font-size: 1.6rem;
+    font-size: 2rem;
     align-self: center;
 }
 
@@ -157,17 +157,35 @@ span {
     text-align: center;
     margin-bottom: 3rem;
 }
-
+/*
 .portfolio-container {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, auto);
+	grid-template-columns: masonry;
     align-items: center;
-    gap: 2.5rem;
+    gap: 0rem;
 }
 
+.portfolio-container {
+    position: relative;
+	height: 100%;
+	width: 100%;
+	margin: auto;
+	padding: 45px 0;
+	display: grid;
+	grid-template-columns: auto auto auto;
+	grid-gap: 1vh;
+	grid-auto-flow: dense;
+}
+*/
+.portfolio-container {
+	columns: 3 250px;
+	gap: 15px;
+}
+/*
 .portfolio-container .portfolio-box {
     position: relative;
-    border-radius: 2rem;
+    border-radius: 0rem;
     box-shadow: 0 0 1rem var(--bg-color);
     overflow: hidden;
     display: flex;
@@ -178,8 +196,48 @@ span {
     transition: .5s ease;
 }
 
+
+.portfolio-container .portfolio-box {
+	display: flex;
+	flex-direction: column;
+	gap: 5px;
+	position: relative;
+    border-radius: 0rem;
+    box-shadow: 0 0 1rem var(--bg-color);
+    overflow: hidden;
+	transition: .5s ease;
+}
+
+.portfolio-box img {
+	position: relative;
+	height: 100%;
+	width: 100%;
+	overflow: hidden;
+	border-radius: 2px;
+	transition: .5s ease;
+}
+*/
+.portfolio-container .portfolio-box{
+	display: auto;
+	flex-direction: column;
+	gap: 15px;
+	position: relative;
+    border-radius: 0rem;
+    box-shadow: 0 0 1rem var(--bg-color);
+	overflow: hidden;
+	transition: .5s ease;
+	margin-bottom: 15px;
+}
+
+.portfolio-box img {
+  	width: 100%;
+	min-height: 15vh;
+	transform: translate(0px, 1px);
+}
+
 .portfolio-box:hover img {
     transform: scale(1.1);
+	transition: .5s ease;
 }
 
 .portfolio-box .portfolio-layer {
@@ -188,7 +246,7 @@ span {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(rgba(0,0,0,.2), #B07691);
+    background: linear-gradient(rgba(0,0,0,.2), #262626);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -201,6 +259,7 @@ span {
 
 .portfolio-box:hover .portfolio-layer {
     transform: translateY(0%);
+	transition: .5s ease;
 }
 
 .portfolio-layer h4 {
@@ -211,7 +270,7 @@ span {
     font-size: 1.6rem;
     margin: .3rem 0 .1rem;
 }
-
+/*
 .portfolio-layer button {
     display: inline-flex;
     justify-content: center;
@@ -223,19 +282,48 @@ span {
     border-radius: 50%;
     cursor: pointer;
 }
-
+*/
 .portfolio-layer a i {
     font-size: 2rem;
     color: var(--second-bg-color);
 }
-/*///////////////////////////////////////////////////////////////////////////cow popup /////////////////////////////////////////////////////////////////////////////////////////// */
+
+/* /////////////////////////////// notan ///////////////////////////// */
+
+.notan {
+    background: var(--bg-color);
+	display: grid;
+	justify-content: center;
+}
+
+.notan-content h2 {
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+    font-size: 5rem;
+}
+
+.notan-content p {
+    font-size: 2rem;
+	text-align: center;
+	justify-content: center;
+	margin-bottom: 3rem;
+}
+
+.notan-img img {
+    height: 70vh;
+	align-items: center;
+	justify-content: center;
+    transition: .5s ease;
+}
+/*///////////////////////////////////////////////////////////////////////////cow popup ///////////////////////////////////////////////////////////////////////////////////////////*/
+
 .popup-cow {
     position: fixed;
     top: 0%;
     left: 0;
     width: 0%;
     height: 0%;
-    /* transform: translateY(-50%); */
     background: rgba(0,0,0,.9);
     overflow: hidden;
     z-index: 1;
@@ -243,13 +331,8 @@ span {
 
 .popup-cow .popup-content-cow {
     padding: 3rem 3rem;
-    /* width: 100%; */
-    /* max-width: 550px; */
-    /* margin: 0 auto; */
-    /* opacity: 0; */
     display: flex;
     justify-content: center;
-    /* align-items: center; */
     gap: 2rem;
 }
 
@@ -267,26 +350,8 @@ span {
     border-radius: 50%;
 }
 
-/* .popup .popup-content h2 { */
-    /* font-size: 5rem; */
-    /* margin: 20px 0px; */
-    /* text-align: center; */
-    /* justify-self: center; */
-/* } */
-
-/* .popup-img-cow p {
-    font-size: 2rem;
-    text-align: left;
-    line-height: 1.2;
-    margin: 3rem 0 3rem;
-    color: var(--text-color);
-}  */
-
 .popup-img-cow img {
     width: 30vw;
-    /* align-self: center; */
-    /* top: 40%; */
-    /* justify-self: center; */
     margin-top: 6rem;
     vertical-align: middle;
     
@@ -316,14 +381,15 @@ span {
         height: 100%;
     }
 }
+
 /*///////////////////////////////////////////////////////////////////////////kate popup /////////////////////////////////////////////////////////////////////////////////////////// */
+
 .popup-kate {
     position: fixed;
     top: 0%;
     left: 0;
     width: 0%;
     height: 0%;
-    /* transform: translateY(-50%); */
     background: rgba(0,0,0,.9);
     overflow: hidden;
     z-index: 1;
@@ -331,13 +397,8 @@ span {
 
 .popup-kate .popup-content-kate {
     padding: 3rem 3rem;
-    /* width: 100%; */
-    /* max-width: 550px; */
-    /* margin: 0 auto; */
-    /* opacity: 0; */
     display: flex;
     justify-content: center;
-    /* align-items: center; */
     gap: 2rem;
 }
 
@@ -385,14 +446,15 @@ span {
         height: 100%;
     }
 }
+
 /*///////////////////////////////////////////////////////////////////////////game popup /////////////////////////////////////////////////////////////////////////////////////////// */
+
 .popup-game {
     position: fixed;
     top: 0%;
     left: 0;
     width: 0%;
     height: 0%;
-    /* transform: translateY(-50%); */
     background: rgba(0,0,0,.9);
     overflow: hidden;
     z-index: 1;
@@ -400,13 +462,8 @@ span {
 
 .popup-game .popup-content-game {
     padding: 3rem 3rem;
-    /* width: 100%; */
-    /* max-width: 550px; */
-    /* margin: 0 auto; */
-    /* opacity: 0; */
     display: flex;
     justify-content: center;
-    /* align-items: center; */
     gap: 2rem;
 }
 
@@ -460,14 +517,15 @@ span {
         height: 100%;
     }
 }
+
 /*///////////////////////////////////////////////////////////////////////////room popup /////////////////////////////////////////////////////////////////////////////////////////// */
+
 .popup-room {
     position: fixed;
     top: 0%;
     left: 0;
     width: 0%;
     height: 0%;
-    /* transform: translateY(-50%); */
     background: rgba(0,0,0,.9);
     overflow: hidden;
     z-index: 1;
@@ -475,10 +533,6 @@ span {
 
 .popup-room .popup-content-room {
     padding: 2rem 2rem;
-    /* width: 100%; */
-    /* max-width: 550px; */
-    /* margin: 0 auto; */
-    /* opacity: 0; */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -531,13 +585,13 @@ span {
 }
 
 /*///////////////////////////////////////////////////////////////////////////ghoul popup /////////////////////////////////////////////////////////////////////////////////////////// */
+
 .popup-ghoul {
     position: fixed;
     top: 0%;
     left: 0;
     width: 0%;
     height: 0%;
-    /* transform: translateY(-50%); */
     background: rgba(0,0,0,.9);
     overflow: hidden;
     z-index: 1;
@@ -545,13 +599,8 @@ span {
 
 .popup-ghoul .popup-content-ghoul {
     padding: 3rem 3rem;
-    /* width: 100%; */
-    /* max-width: 550px; */
-    /* margin: 0 auto; */
-    /* opacity: 0; */
     display: flex;
     justify-content: center;
-    /* align-items: center; */
     gap: 2rem;
 }
 
@@ -608,13 +657,13 @@ span {
 
 
 /*///////////////////////////////////////////////////////////////////////////vase popup /////////////////////////////////////////////////////////////////////////////////////////// */
+
 .popup-vase {
     position: fixed;
     top: 0%;
     left: 0;
     width: 0%;
     height: 0%;
-    /* transform: translateY(-50%); */
     background: rgba(0,0,0,.9);
     overflow: hidden;
     z-index: 1;
@@ -622,13 +671,8 @@ span {
 
 .popup-vase .popup-content-vase {
     padding: 3rem 3rem;
-    /* width: 100%; */
-    /* max-width: 550px; */
-    /* margin: 0 auto; */
-    /* opacity: 0; */
     display: flex;
     justify-content: center;
-    /* align-items: center; */
     gap: 2rem;
 }
 
@@ -679,13 +723,13 @@ span {
 
 
 /*///////////////////////////////////////////////////////////////////////////sketch popup /////////////////////////////////////////////////////////////////////////////////////////// */
+
 .popup-sketch {
     position: fixed;
     top: 0%;
     left: 0;
     width: 0%;
     height: 0%;
-    /* transform: translateY(-50%); */
     background: rgba(0,0,0,.9);
     overflow: hidden;
     z-index: 1;
@@ -693,13 +737,8 @@ span {
 
 .popup-sketch .popup-content-sketch {
     padding: 3rem 3rem;
-    /* width: 100%; */
-    /* max-width: 550px; */
-    /* margin: 0 auto; */
-    /* opacity: 0; */
     display: flex;
     justify-content: center;
-    /* align-items: center; */
     gap: 2rem;
 }
 
@@ -750,13 +789,13 @@ span {
 
 
 /*///////////////////////////////////////////////////////////////////////////perfume popup /////////////////////////////////////////////////////////////////////////////////////////// */
+
 .popup-perfume {
     position: fixed;
     top: 0%;
     left: 0;
     width: 0%;
     height: 0%;
-    /* transform: translateY(-50%); */
     background: rgba(0,0,0,.9);
     overflow: hidden;
     z-index: 1;
@@ -764,13 +803,8 @@ span {
 
 .popup-perfume .popup-content-perfume {
     padding: 3rem 3rem;
-    /* width: 100%; */
-    /* max-width: 550px; */
-    /* margin: 0 auto; */
-    /* opacity: 0; */
     display: flex;
     justify-content: center;
-    /* align-items: center; */
     gap: 2rem;
 }
 
@@ -821,13 +855,13 @@ span {
 
 
 /*///////////////////////////////////////////////////////////////////////////squash popup /////////////////////////////////////////////////////////////////////////////////////////// */
+
 .popup-squash {
     position: fixed;
     top: 0%;
     left: 0;
     width: 0%;
     height: 0%;
-    /* transform: translateY(-50%); */
     background: rgba(0,0,0,.9);
     overflow: hidden;
     z-index: 1;
@@ -835,13 +869,8 @@ span {
 
 .popup-squash .popup-content-squash {
     padding: 3rem 3rem;
-    /* width: 100%; */
-    /* max-width: 550px; */
-    /* margin: 0 auto; */
-    /* opacity: 0; */
     display: flex;
     justify-content: center;
-    /* align-items: center; */
     gap: 2rem;
 }
 
@@ -892,13 +921,13 @@ span {
 
 
 /*///////////////////////////////////////////////////////////////////////////daniel popup /////////////////////////////////////////////////////////////////////////////////////////// */
+
 .popup-daniel {
     position: fixed;
     top: 0%;
     left: 0;
     width: 0%;
     height: 0%;
-    /* transform: translateY(-50%); */
     background: rgba(0,0,0,.9);
     overflow: hidden;
     z-index: 1;
@@ -906,13 +935,8 @@ span {
 
 .popup-daniel .popup-content-daniel {
     padding: 3rem 3rem;
-    /* width: 100%; */
-    /* max-width: 550px; */
-    /* margin: 0 auto; */
-    /* opacity: 0; */
     display: flex;
     justify-content: center;
-    /* align-items: center; */
     gap: 2rem;
 }
 
@@ -962,7 +986,8 @@ span {
 }
 
 /* breakpoints /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
-@media (max-width: 1200px) {
+
+@media (max-width : 1080px ){
     html {
         font-size: 55%;
     }
@@ -976,7 +1001,7 @@ span {
     section {
         padding: 10rem 3% 2rem;
     }
-
+*/
     /*footer*/
 
     .portfolio {
@@ -1033,7 +1058,8 @@ span {
     }
 
     .portfolio-container {
-        grid-template-columns: repeat(2, 1fr);
+        columns: 2 1fr;
+		gap: 5px;
     }
 
 }
@@ -1056,11 +1082,11 @@ span {
     }
 }
 
-/* @media (max-width: 365px) {
+@media (max-width: 365px) {
     .popup-img-cow img {
         width: 90vw;
     }
-} */
+} 
 
 @media only screen and (max-width: 700px){
     .modal-content {
