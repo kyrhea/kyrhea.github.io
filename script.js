@@ -1,4 +1,3 @@
-
 const form = document.querySelector('form');
 const fullName = document.getElementById("Full Name");
 const emailAddress = document.getElementById("Email Address");
@@ -180,6 +179,10 @@ document.querySelector(".popup-squash .popup-close-btn").addEventListener("click
 
 document.querySelector("#popup-open-btn-daniel").addEventListener("click", function(){
     document.querySelector(".popup-daniel").classList.add("active");
+});
+
+document.querySelector(".popup-daniel .popup-close-btn").addEventListener("click", function(){
+    document.querySelector(".popup-daniel").classList.remove("active");
 });
 
 document.querySelector(".popup-daniel .popup-close-btn").addEventListener("click", function(){
