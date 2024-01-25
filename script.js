@@ -1,3 +1,42 @@
+
+const form = document.querySelector('form');
+const fullName = document.getElementById("Full Name");
+const emailAddress = document.getElementById("Email Address");
+const mobileNumber = document.getElementById("Mobile Number");
+const emailSubject = document.getElementById("Email Subject");
+const yourMessage = document.getElementById("Your Message");
+
+function sendEmail() {
+	const bodyMessage = 'Full Name: ${fullName.value}<br> Email: ${emailAddress.value}<br> Mobile Number: ${mobileNumber.value}<br> Subject: ${emailSubject.value}<br> Message: ${yourMessage.value}';
+	
+	Email.send({
+		SecureToken: "40897b7f-2f7a-489c-bb90-9ed65fea17d0",
+    	Host: "smtp.elasticemail.com",
+    	Username: "kyliethomas.portfolio@gmail.com",
+    	Password: "5BD0BE144846F9ADA2A2BCC2D86DFB2731D5",
+    	To: "kyliethomas.portfolio@gmail.com",
+    	From: "kyliethomas.portfolio@gmail.com",
+    	Subject: emailSubject.value,
+    	Body: bodyMessage
+	}).then(
+  		message => {
+			if (message == "OK") {
+				Swal.fire({
+  					title: "Success!",
+  					text: "Message sent!",
+  					icon: "success"
+				});
+			}
+		}
+	);
+}
+
+form.addEventListener("submit", (e) => {
+	e.preventDefault();
+	
+	sendEmail();
+});
+
 // toggle icon navbar
 let menuIcon = document.querySelector('#menu-icon');
 let navbar = document.querySelector('.navbar');
