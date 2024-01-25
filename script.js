@@ -1,4 +1,3 @@
-
 const form = document.querySelector('form');
 const fullName = document.getElementById("Full Name");
 const emailAddress = document.getElementById("Email Address");
