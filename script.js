@@ -50,13 +50,13 @@ ScrollReveal().reveal('.home-content p, .about-content', { origin: 'right' });
 
 // typed js
 const typed = new Typed('.multiple-text', {
-    strings: ['An Artist', 'A Student', 'A Designer'],
+    strings: ['An Artist', 'A Game Developer', 'A Student'],
     typeSpeed: 100,
     backSpeed: 100,
     backDelay: 1000,
     loop: true
 });
-/*
+
 document.querySelector("#popup-open-btn-cow").addEventListener("click", function(){
     document.querySelector(".popup-cow").classList.add("active");
 });
@@ -146,4 +146,3 @@ document.querySelector("#popup-open-btn-daniel").addEventListener("click", funct
 document.querySelector(".popup-daniel .popup-close-btn").addEventListener("click", function(){
     document.querySelector(".popup-daniel").classList.remove("active");
 });
-*/
