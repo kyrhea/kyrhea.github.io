@@ -147,7 +147,3 @@ document.querySelector("#popup-open-btn-daniel").addEventListener("click", funct
 document.querySelector(".popup-daniel .popup-close-btn").addEventListener("click", function(){
     document.querySelector(".popup-daniel").classList.remove("active");
 });
-
-document.querySelector(".popup-daniel .popup-close-btn").addEventListener("click", function(){
-    document.querySelector(".popup-daniel").classList.remove("active");
-});
